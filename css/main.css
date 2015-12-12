@@ -12,13 +12,10 @@ body { background-color:black; }
 
 .fire_ryu {background-image: url('../images/ryu-throwing-hadouken.png');}
 
+.cool_pose { background-image: url('../images/ryu-cool.gif');}
+
 .ready_ryu, .fire_ryu { display: none;}
 
 .hadouken, .still_ryu, .ready_ryu, .fire_ryu { background-repeat: no-repeat; }
 
 .hadouken { background-image: url('../images/hadouken.gif'); width: 156px; height: 90px; display: none; float: left; position: absolute; top: 170px; left: 650px; z-index: 10; }
-
-
-
-
-

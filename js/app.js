@@ -1,26 +1,39 @@
-$(document).ready(function() {
-	$('.ryu').mouseenter(function() {
+$(document).ready(function(){
+	$('.ryu').mouseenter(function(){
 		$('.still_ryu').hide();
 		$('.ready_ryu').show();
 	})
-	.mouseleave(function() {
-		$('.ready_ryu').hide();
+	.mouseleave(function(){
 		$('.still_ryu').show();
+		$('.ready_ryu').hide();
+		
 	})
-	.mousedown(function() {
+	.mousedown(function(){
+		playHadouken();
 		$('.ready_ryu').hide();
 		$('.fire_ryu').show();
-		$('.hadouken').show().animate(right)
-		//play sound
-		//show hadouken and animate it to right of screen
+		$('.hadouken').finish().show().animate(
+			{'left': '1020px'},
+			500,
+			function(){
+				$('.hadouken').hide();
+				$('.hadouken').css('left', '650px');
+			});
 	})
-	.mouseup(function() {
-		$('.hadouken').hide();
+	.mouseup(function(){
+		// $('.hadouken').hide();
 		$('.fire_ryu').hide();
 		$('.ready_ryu').show();
-		
-		//make ryu return
-
-	})
+	});
 
 });
+
+function playHadouken() {
+    $('#hadouken-sound')[0].volume = 0.5;
+    $('#hadouken-sound')[0].load();
+    $('#hadouken-sound')[0].play();
+}
+
+
+
+
